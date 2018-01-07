@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 import java.nio.MappedByteBuffer;
 
 public class MikeNioUtils {
+
     public static void unmap(MappedByteBuffer bb) {
         Cleaner cl = ((DirectBuffer)bb).cleaner();
         if (cl != null)
@@ -20,6 +21,5 @@ public class MikeNioUtils {
         m.setAccessible(true);
         m.invoke(FileChannelImpl.class, bb);
     }
-
 
 }
